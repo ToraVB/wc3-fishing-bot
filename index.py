@@ -50,6 +50,7 @@ def catch():
     pyautogui.click(fishing_rod_x, fishing_rod_y)
 
     clicks = 0
+    start = time.time()
 
     while True:
         if clicks > 0 and time.time() - __timer >= 5:
@@ -59,10 +60,10 @@ def catch():
             print(f'Total runs: {__total_runs}')
             print('Reloading...')
             break
-        if time.time() - __timer >= 60:
+        if time.time() - __timer >= 60 * 2:
             print('Exiting by time...')
             sys.exit(0)
-        if time.time() - __timer >= 10:
+        if time.time() - start >= 5:
             print('Reloading...')
             break
 
@@ -71,11 +72,13 @@ def catch():
         if detected_up(image) == 548:
             pyautogui.press('up')
             __timer = time.time()
+            start = time.time()
             clicks += 1
             continue
         if detected_down(image) == 676:
             pyautogui.press('down')
             __timer = time.time()
+            start = time.time()
             clicks += 1
             continue
     catch()
