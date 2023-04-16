@@ -1,2 +1,2 @@
 # wc3-fishing-bot
-fishing bot for custom map
+fishing bot for Twilight's Eve Evo
