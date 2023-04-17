@@ -60,7 +60,7 @@ def catch():
             print(f'Total runs: {__total_runs}')
             print('Reloading...')
             break
-        if time.time() - __timer >= 60 * 2:
+        if time.time() - __timer >= 60 * 5:
             print('Exiting by time...')
             sys.exit(0)
         if time.time() - start >= 5:
