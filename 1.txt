@@ -1,0 +1,9 @@
+[program:QueueName] - указать название очереди
+process_name=%(program_name)s_%(process_num)02d - стандартная вещь
+command=php %(ENV_APP_DIR)s/artisan queue:work --queue=с - путь к artisan в --queue указать название очереди
+autostart=true - отвечает за старт/рестарт очереди, если упала
+autorestart=true - отвечает за старт/рестарт очереди, если упала
+user=www-data - пользователь, от которого будет запускаться очередь
+numprocs=1 - кол-во процессов, которые запустят команду с этой очередью, больше число = больше процессов будет обрабатывать эту очередь
+redirect_stderr=true - без понятия что делает
+stdout_logfile=%(ENV_APP_DIR)s/storage/logs/QueueName_queue.log - путь куда будут сохраняться логи очереди

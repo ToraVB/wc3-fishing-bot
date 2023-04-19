@@ -1,6 +1,7 @@
 import sys
 import time
 import cv2
+import keyboard
 import numpy as np
 import pyautogui
 from PIL import ImageGrab
@@ -45,6 +46,8 @@ def catch():
     global __timer
     global __total_runs
     time.sleep(5)
+
+    keyboard.press('f1')
 
     pyautogui.moveTo(fishing_rod_x, fishing_rod_y)
     pyautogui.click(fishing_rod_x, fishing_rod_y)
